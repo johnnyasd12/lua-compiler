@@ -1,0 +1,17 @@
+scanner: y.tab.o lex.yy.o
+	gcc -o scanner y.tab.o lex.yy.o -ll
+
+y.tab.c y.tab.h: proj3.y
+	yacc -d proj3.y
+
+y.tab.o: y.tab.c y.tab.h
+	gcc -c -g y.tab.c
+
+lex.yy.o: lex.yy.c y.tab.h
+	gcc -c -g lex.yy.c
+
+lex.yy.c: proj1c.l y.tab.h
+	lex proj1c.l
+
+clean:
+	rm -f *.o *.c

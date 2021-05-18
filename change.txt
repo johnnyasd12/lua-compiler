@@ -1,0 +1,4 @@
+1. symboltable中另外存constant variable的值
+2. yacc讀文法的時候要一邊寫bytecode
+3. 為了讓class名稱和lua檔名一樣，另外使用讀檔指令，讓command line指令結合yyin
+4. lex部分constant的值本來傳回型態，後來改傳值
